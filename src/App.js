@@ -7,8 +7,10 @@ import PrincipalCategory from '../src/components/principalCategory';
 import PrincipalAuthor from '../src/components/principalAuthor';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import ScrollToTop from "./scrollToTop";
+import { useFirebaseApp } from 'reactfire';
 
 function App() {
+  const firebase = useFirebaseApp();
   return (
 
    // <Principal/>
