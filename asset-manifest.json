@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/el-mundo-tolai-frontend/static/css/main.63befe87.chunk.css",
+    "main.js": "/el-mundo-tolai-frontend/static/js/main.c05ac3e2.chunk.js",
+    "main.js.map": "/el-mundo-tolai-frontend/static/js/main.c05ac3e2.chunk.js.map",
+    "runtime-main.js": "/el-mundo-tolai-frontend/static/js/runtime-main.c6c3c34f.js",
+    "runtime-main.js.map": "/el-mundo-tolai-frontend/static/js/runtime-main.c6c3c34f.js.map",
+    "static/css/2.42d51ddf.chunk.css": "/el-mundo-tolai-frontend/static/css/2.42d51ddf.chunk.css",
+    "static/js/2.c45f60de.chunk.js": "/el-mundo-tolai-frontend/static/js/2.c45f60de.chunk.js",
+    "static/js/2.c45f60de.chunk.js.map": "/el-mundo-tolai-frontend/static/js/2.c45f60de.chunk.js.map",
+    "static/js/3.0dd72de0.chunk.js": "/el-mundo-tolai-frontend/static/js/3.0dd72de0.chunk.js",
+    "static/js/3.0dd72de0.chunk.js.map": "/el-mundo-tolai-frontend/static/js/3.0dd72de0.chunk.js.map",
+    "index.html": "/el-mundo-tolai-frontend/index.html",
+    "static/css/2.42d51ddf.chunk.css.map": "/el-mundo-tolai-frontend/static/css/2.42d51ddf.chunk.css.map",
+    "static/css/main.63befe87.chunk.css.map": "/el-mundo-tolai-frontend/static/css/main.63befe87.chunk.css.map",
+    "static/js/2.c45f60de.chunk.js.LICENSE.txt": "/el-mundo-tolai-frontend/static/js/2.c45f60de.chunk.js.LICENSE.txt",
+    "static/media/newspp.198fb8a3.gif": "/el-mundo-tolai-frontend/static/media/newspp.198fb8a3.gif",
+    "static/media/thanks.35ea828f.gif": "/el-mundo-tolai-frontend/static/media/thanks.35ea828f.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6c3c34f.js",
+    "static/css/2.42d51ddf.chunk.css",
+    "static/js/2.c45f60de.chunk.js",
+    "static/css/main.63befe87.chunk.css",
+    "static/js/main.c05ac3e2.chunk.js"
+  ]
+}
