@@ -20,7 +20,7 @@ function App() {
          <div>
             <Routes>
                <Route path="/" element={<Principal/>} exact />
-               <Route path="/art/:id" element={<ArticleDetail/>}/>
+               <Route path="/art/:id" element={<ArticleDetail/>} exact/>
                <Route path="/col/:id" element={<ColumnDetail/>}/>
                <Route path="/cat/:id" element={<PrincipalCategory/>}/>
                <Route path="/auth/:id" element={<PrincipalAuthor/>}/>

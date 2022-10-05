@@ -2,7 +2,7 @@
   "name": "mundotolai",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://davidabellan.github.io/el-mundo-tolai-frontend",
+  "homepage": "https://davidabellan.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
@@ -30,7 +30,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy":"gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

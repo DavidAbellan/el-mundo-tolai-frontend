@@ -1,5 +1,6 @@
 import React from "react";
 import Category from "./articleCategoryButton";
+import ArticleDetail from "./articleDetail";
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,9 +12,8 @@ function article(props) {
   let created = props.created
   let id = props.id;
   let categories = props.categories;
-  let path = '/art/' + id;
+  let path = '/art/' + props.id;
   
-   
 
   if (outstanding) {
     if (title.length < 20) {
@@ -21,11 +21,13 @@ function article(props) {
         <div className="outstandingNew">
           <Link to={{
             pathname: path,
-            query: { id }
-          }}>
+            query: { id },
+            id
+            }}>
 
             <h2>{title}</h2>
-            <img src={photo.path} alt={title} className="photoPrincipalOutstanding" />
+            <img src={photo.path} alt={title} className="photoPrincipalOutstanding" >
+              </img>
           </Link>
 
           <div className="subhead">{"@" + author + " || " + created + "  || "}

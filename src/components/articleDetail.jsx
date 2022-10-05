@@ -6,12 +6,14 @@ import Footer from "../components/footer";
 import Grid from '../components/articleDetailRelatedGrid';
 import loadingGif from '../loading.gif'
 import url from "../backend";
+import { Link } from 'react-router-dom';
+
 
 class Detail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: "",
+            id : "",
             content: [],
             photos: "",
             author: "",
@@ -27,14 +29,17 @@ class Detail extends React.Component {
             authorPhoto: "",
             authors:[]
         }
-    
-        this.id = window.location.href.substring(26, window.location.href.length);
-        this.id2 = (this.id).replace(url.article, "");
+       
+        
+        var index = window.location.href.lastIndexOf("/");
+       
+        this.setState ({
+            id : window.location.href.substring(index + 1, window.location.href.length)
+        });
 
         this.getNew();
-
-
-    }
+}
+  
     
     moreThanAPicture() {
         this.setState({
@@ -80,12 +85,11 @@ class Detail extends React.Component {
     }
 
     async getNew() {
-        let content = await axios.get(url.article + this.id2);
+        let content = await axios.get(url.article + this.state.id);
         let authors = await axios.get(url.getAllAuthors);
 
         this.setState({
             content: content.data,
-            id: content.data.article.id,
             author: content.data.author,
             article: content.data.article,
             categories: content.data.categories,
@@ -102,7 +106,6 @@ class Detail extends React.Component {
         
         this.bowdlerize();
         
-       
     }
    
     render() {
