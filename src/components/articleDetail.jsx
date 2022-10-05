@@ -6,7 +6,6 @@ import Footer from "../components/footer";
 import Grid from '../components/articleDetailRelatedGrid';
 import loadingGif from '../loading.gif'
 import url from "../backend";
-import { Link } from 'react-router-dom';
 
 
 class Detail extends React.Component {
@@ -32,6 +31,7 @@ class Detail extends React.Component {
        
         
         var index = window.location.href.lastIndexOf("/");
+        this.id =window.location.href.substring(index + 1, window.location.href.length);
        
         this.setState ({
             id : window.location.href.substring(index + 1, window.location.href.length)
@@ -85,7 +85,7 @@ class Detail extends React.Component {
     }
 
     async getNew() {
-        let content = await axios.get(url.article + this.state.id);
+        let content = await axios.get(url.article + this.id);
         let authors = await axios.get(url.getAllAuthors);
 
         this.setState({
