@@ -12,8 +12,10 @@ class PrincipalCategory extends React.Component{
           content : []
         }
         this.url =  url.getCategory;
-        this.id = window.location.href.substring(26, window.location.href.length);
-        this.id2 = (this.id).replace(url.getCategory, "");
+        var index = window.location.href.lastIndexOf("/");
+        this.id =window.location.href.substring(index + 1, window.location.href.length);
+       
+        
         this.getRelated();
     
     }

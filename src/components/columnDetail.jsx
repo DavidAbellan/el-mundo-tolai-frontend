@@ -17,11 +17,8 @@ class ColumnDetail extends React.Component {
         };
         this.url = url.column;
         var index = window.location.href.lastIndexOf("/");
-        this.id =window.location.href.substring(index + 1, window.location.href.length);
+        this.id =window.location.href.substring(index + 1 , window.location.href.length);
        
-        this.setState ({
-            id : window.location.href.substring(index + 1, window.location.href.length)
-        });
         this.getCol();
     }
 

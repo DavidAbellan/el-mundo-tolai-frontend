@@ -15,8 +15,10 @@ class PrincipalAuthor extends React.Component {
             columns : []
         }
         this.url = url.getAuthor;
-        this.id = window.location.href.substring(27, window.location.href.length);
-        this.id2 = (this.id).replace(url.getAuthor, "");
+        var index = window.location.href.lastIndexOf("/");
+        this.id =window.location.href.substring(index + 1, window.location.href.length);
+       
+       
         this.getRelated();
 
     }
