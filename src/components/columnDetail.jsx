@@ -16,8 +16,12 @@ class ColumnDetail extends React.Component {
             authors: []
         };
         this.url = url.column;
-        this.id = window.location.href.substring(26, window.location.href.length);
-        this.id2 = (this.id).replace(url.column, "");
+        var index = window.location.href.lastIndexOf("/");
+        this.id =window.location.href.substring(index + 1, window.location.href.length);
+       
+        this.setState ({
+            id : window.location.href.substring(index + 1, window.location.href.length)
+        });
         this.getCol();
     }
 
@@ -75,7 +79,7 @@ class ColumnDetail extends React.Component {
     }
 
     async getCol() {
-        let content = await axios.get(this.url + this.id2);
+        let content = await axios.get(this.url + this.id);
         let related = await axios.get(this.url + "allfrom/" + content.data.author.id);
         let authors = await axios.get(url.getAllAuthors);
 
