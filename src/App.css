@@ -1,0 +1,199 @@
+/*TAILWIND DIRECTIVES*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*TAILWIND DIRECTIVES*/
+
+/*ARTICLE DETAIL*/
+.photoFootAuthor{
+ @apply ml-2 w-40 max-h-52 h-auto  
+}
+.detailHeader {
+ @apply flex h-48 bg-black justify-between 
+}
+.detailTitle h1{
+ @apply font-Roboto mt-6 mb-10 w-2/3 self-center  font-bold  text-white text-6xl md:text-9xl ;
+  -webkit-text-stroke: 0.5px black;
+}
+.detailTitle{
+ @apply px-32 py-10 w-auto 
+}
+.detailContent{
+ @apply flex-col justify-center
+}
+.content{
+  overflow-x:hidden;
+}
+.detail{
+ @apply flex justify-center mb-4
+}
+.articleDetailPhoto{
+ @apply flex justify-center mb-6
+}
+.textBlock p {
+ @apply w-auto text-3xl px-12 py-5 leading-loose
+}
+.textBlocksecond p {
+ @apply w-auto text-3xl px-12 py-5 leading-loose
+}
+.articleDetailimage{
+ @apply min-w-full
+}
+.textBlock p::first-letter {
+  @apply capitalize text-8xl font-bold font-Tangerine
+}
+.articleBottom{
+ @apply inline-flex
+}
+.articleBottomText{
+ @apply ml-4
+}
+.articleBottomText h1 {
+  @apply font-Oswald
+}
+/*detailHeader*/
+.detailHeaderLink{
+ @apply text-white no-underline
+}
+.detailHeaderEMT{
+ @apply text-8xl ml-6 mt-2 font-Oswald 
+}
+.detailHeaderClock{
+ @apply text-white font-extralight text-5xl justify-end mr-7 mt-4 md:mr-10 
+}
+.newspaperGif{
+ @apply  scale-100 ml-0 lg:scale-100 md:scale-75 
+}
+.newspaperGifdiv{
+ @apply overflow-hidden justify-start mb-0  h-auto md:justify-items-start bg-white
+}
+.retaledH2{
+  @apply text-4xl ml-6 mt-2 font-Oswald 
+}
+/*detailHeader*/
+
+
+/*ARTICLE DETAIL*/
+
+/*HEADER*/
+header h1{ 
+  @apply text-8xl font-PlayFair  
+}
+.head{
+  @apply flex-col text-center mb-4
+}
+.titleNotOutstanding{
+  @apply no-underline text-black 
+}
+.headerBlackLine{
+  @apply bg-black w-auto h-1 mt-1 mb-1
+}
+.hbltop{
+  @apply mt-10
+}
+.hblbottom{
+  @apply mb-10
+}
+.subheadHeader {
+  @apply font-Oswald
+}
+.categorySelect {
+  @apply font-Oswald
+}
+/*HEADER*/
+
+/*infinite scroll component*/
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+/*infinite scroll component*/
+
+/*FOOTER*/
+.site-footer{
+  @apply bg-black text-white h-auto font-Oswald 
+}
+.site-footer h6{
+  @apply  mt-4 font-bold text-2xl
+}
+.site-footer a {
+  @apply no-underline text-white
+}
+/*FOOTER*/
+ 
+.endGif{
+  @apply text-center ml-48 w-32 md:w-auto
+}
+/*LAYOUT*/
+
+/*Article*/
+.photoPrincipalOutstanding {
+  @apply h-auto w-3/4 
+}
+.outstandingNew {
+  @apply items-center justify-center ml-52 md:ml-52 sm:ml-28
+}
+.outstandingNewMoreThan20 {
+  @apply items-center justify-center ml-52 md:ml-52 sm:ml-28
+}
+.title{
+  @apply font-Roboto  font-bold  text-white  text-2xl md:text-6xl mt-6 w-2/3 self-center;
+  -webkit-text-stroke: 0.5px black;
+}
+.formatTitleMoreThan20 h2{
+  @apply ml-52 w-2/4 mt-4 mb-4
+}
+.subhead{
+  @apply font-Oswald font-extrabold
+}
+.articleCategoryButton{
+  @apply bg-slate-400 ml-1 text-white rounded shadow font-thin border-spacing-px hover:bg-black
+}
+
+.imageNotOutstanding{
+  @apply h-auto w-40 max-w-xl mb-12 md:h-72 sm:w-auto
+}
+.notOutstanding{
+  @apply flex items-center mt-4 ml-52 md:ml-52 sm:ml-32 
+}
+.titleNotOutstanding{
+  @apply items-center mb-20 max-w-xs justify-center ml-1 md:ml-6 sm:ml-1
+}
+/*Article*/
+
+
+/*Column*/
+.imageColumnAuthor{
+  @apply rounded-full w-20 grayscale md:w-44
+}
+.column{
+  @apply flex items-center justify-start mt-4 ml-32 md:ml-52  
+}
+.columnContainer{
+  @apply flex-col items-start
+}
+.column blockquote {
+  @apply w-96 mt-9 italic ml-3 text-xl md:text-3xl
+}
+
+/*Column*/
+/*LAYOUT*/
+/*Column Detail*/
+.columnTitle{
+  @apply px-32 py-10 w-auto
+}
+.columnAuthor{
+  @apply ml-4
+}
+.columnAuthor h1{
+  @apply font-Oswald text-3xl
+}
+.columnAuthor p {
+  @apply font-IBM uppercase
+}
+.columnDetailHeaderTitle{
+  @apply font-IBM text-xl ml-1
+}
+/*COlumn Detail*/
