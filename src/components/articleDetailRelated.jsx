@@ -18,22 +18,21 @@ function CardOfGrid(props) {
         text = props.main_text.substring(0, 100) + "...";
     }
     return (
-        <Card>
-            <Card.Body>
+        <div className='articleDetailRelated'>
             <Link onClick={()=>props.history.push(id)}  to={{
             pathname: path,
             query: { id }
           }}>
-                <Card.Title>{props.title}</Card.Title>
+                <h5 className='articleDetailRelatedLabel'>{props.title}</h5>
               </Link>
-                <Card.Text>
+                <p>
                     {text}
-                </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-                <small className="text-muted">{date}</small>
-            </Card.Footer>
-        </Card>
+                </p>
+                <p>
+                    {date}
+                </p>
+           
+        </div>
     );
 
 }
