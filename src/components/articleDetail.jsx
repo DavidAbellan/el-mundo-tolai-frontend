@@ -26,20 +26,19 @@ class Detail extends React.Component {
             secondHalf: "",
             secondPhoto: "",
             authorPhoto: "",
-            authors: []
+            authors: [],
+            opinion_column:[]
+           
         }
 
-
-        var index = window.location.href.lastIndexOf("/");
-        this.id = window.location.href.substring(index + 1, window.location.href.length);
-
-        this.setState({
-            id: window.location.href.substring(index + 1, window.location.href.length)
-        });
-
-        this.getNew();
+    
+      
+        
     }
+    componentDidMount(){
+        this.getNew();
 
+    }
 
     moreThanAPicture() {
         this.setState({
@@ -55,7 +54,8 @@ class Detail extends React.Component {
             secondPhoto: this.state.photos[1].path
         })
     }
-    bowdlerize() {
+    async bowdlerize() {
+       
         let bowd = [];
         for (let section of this.state.posts) {
             if (Array.isArray(section)) {
@@ -80,37 +80,44 @@ class Detail extends React.Component {
                 resultFiltered.push(register);
             }
         }
-        this.setState({
-            posts: resultFiltered
-        })
+        
+        for(let p in resultFiltered) {
+            this.state.posts.push(p);  }
+        
+        this.setState({posts:resultFiltered});
+       
+        
     }
 
     async getNew() {
-        let content = await axios.get(url.article + this.id);
+        var index = window.location.href.lastIndexOf("/");
+        let idr = window.location.href.substring(index + 1, window.location.href.length);
+        
+        let content = await axios.get(url.article + idr);
         let authors = await axios.get(url.getAllAuthors);
 
-        this.setState({
+       
+        let arrayOp =content.data.posts[0];
+        //.concat(content.data.posts[1]);
+
+        this.setState(
+            {
+            id: idr,
             content: content.data,
             author: content.data.author,
             article: content.data.article,
             categories: content.data.categories,
             time: content.data.time,
-            posts: content.data.posts,
             photos: content.data.photos,
             principalPhoto: content.data.photos[0].path,
             authorPhoto: content.data.authorPhoto.path,
-            authors: authors.data.authors
-        })
-        if (this.state.photos.length > 1) {
-            this.moreThanAPicture();
-        }
-
-        this.bowdlerize();
-
+            authors: authors.data.authors,
+            posts:arrayOp
+            },()=>{this.bowdlerize();})
     }
 
     render() {
-        if (this.state.content == null) {
+        if (!this.state) {
             return (
                 <div><img src={loadingGif} alt='now loading' /></div>
             );
@@ -158,7 +165,6 @@ class Detail extends React.Component {
                         <div className="headerBlackLine hblbottom"></div>  
                         <div>
                             <Grid {...this.state.posts}></Grid>
-
                         </div>
 
 
@@ -248,7 +254,6 @@ class Detail extends React.Component {
 
                         <div>
                             <Grid {...this.state.posts}></Grid>
-
                         </div>
                         <Footer {...this.state.authors}></Footer>
 
