@@ -8,6 +8,8 @@ import loadingGif from '../loading.gif'
 import url from "../backend";
 
 
+
+
 class Detail extends React.Component {
     constructor(props) {
         super(props);
@@ -27,13 +29,34 @@ class Detail extends React.Component {
             secondPhoto: "",
             authorPhoto: "",
             authors: [],
-            opinion_column:[]
+            opinion_column:[],
+            comments:[],
+            showCommentForm: false, 
+            authorNewComment:"",
+            newComment:""
            
         }
 
-    
-      
+   
         
+    }
+    toggleCommentForm = () => {
+        this.setState((prevState) => ({
+          showCommentForm: !prevState.showCommentForm,
+        }));
+    }
+    async setComment() {
+       /* this.setState({
+            authorNewComment:author,
+            newComment:comment
+        })
+        let request = new Object({
+            author:this.state.authorNewComment,
+            comment: this.state.newComment,
+            post_id: this.state.id
+        })
+        await axios.post(url.postComment,request)
+     */
     }
     componentDidMount(){
         this.getNew();
@@ -112,16 +135,33 @@ class Detail extends React.Component {
             principalPhoto: content.data.photos[0].path,
             authorPhoto: content.data.authorPhoto.path,
             authors: authors.data.authors,
-            posts:arrayOp
+            posts:arrayOp,
+            comments:content.data.comments
             },()=>{this.bowdlerize();})
+           
+           
     }
+    
 
     render() {
         if (!this.state) {
+            
             return (
                 <div><img src={loadingGif} alt='now loading' /></div>
             );
         } else if (this.state.morePhotos) {
+            const commentButton = (
+                <button onClick={this.toggleCommentForm}>
+                  <h5>{this.state.comments.length} comentarios</h5> 
+                </button>
+              );
+              const commentForm = this.state.showCommentForm && (
+                <form method="POST" action={this.setComment()}>
+                 
+                  <textarea name="author" placeholder="Escribe tu nombre" />
+                  <textarea name="comment" placeholder="Escribe tu comentario..." />
+                  <button type="submit">Enviar comentario</button>
+                </form>);
             if (this.state.posts.length > 0) {
                 return (
                     <div>
@@ -164,10 +204,15 @@ class Detail extends React.Component {
                         </div>
                         <div className="headerBlackLine hblbottom"></div>  
                         <div>
+                           {commentButton}
+                            {commentForm}
+                       </div>
+
+                        <div>
                             <Grid {...this.state.posts}></Grid>
                         </div>
 
-
+                        
                         <Footer {...this.state.authors}></Footer>
                     </div>
                 );
@@ -210,13 +255,31 @@ class Detail extends React.Component {
                             </div>
                         </div>
                         <div>
+                           {commentButton}
+                            {commentForm}
+                       </div>
+                        <div>
                             <h2>No existen artículos relacionados</h2>
                         </div>
+                        
                         <Footer {...this.state.authors}></Footer>
                     </div>);
 
             }
         } else {
+            const commentButton = (
+           <button onClick={this.toggleCommentForm}>
+           {this.state.comments.length} comentarios
+             </button>
+             );
+             const commentForm = this.state.showCommentForm && (
+                <form  method="POST" action={this.setComment()}>
+                
+                  <textarea name="author" placeholder="Escribe tu nombre" />
+                  <textarea name="comment" placeholder="Escribe tu comentario..." />
+                  <button type="submit">Enviar comentario</button>
+                </form>);
+         
             if (this.state.posts.length > 0) {
                 return (
 
@@ -251,10 +314,14 @@ class Detail extends React.Component {
                             </div>
                         </div>
                         <div className="headerBlackLine hblbottom"></div>
-
+                        <div>
+                           {commentButton}
+                            {commentForm}
+                       </div>
                         <div>
                             <Grid {...this.state.posts}></Grid>
                         </div>
+                        
                         <Footer {...this.state.authors}></Footer>
 
                     </div>
@@ -294,8 +361,13 @@ class Detail extends React.Component {
                         </div>
                         <div className="headerBlackLine hblbottom"></div>
                         <div>
+                           {commentButton}
+                            {commentForm}
+                       </div>
+                        <div>
                             <h2 className='retaledH2'>No hay relacionados</h2>
                         </div>
+                        
                         <Footer {...this.state.authors}></Footer>
 
                     </div>

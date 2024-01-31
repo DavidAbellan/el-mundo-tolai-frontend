@@ -7,5 +7,6 @@ url.getAllAuthors ="http://localhost:3000/authors/get";
 url.profile ="http://localhost:3000/images/profiles/";
 url.column ="http://localhost:3000/col/";
 url.getAuthor ="http://localhost:3000/author/";
-url.getCategory ="http://localhost:3000/cat/"
+url.getCategory ="http://localhost:3000/cat/";
+url.postComment = "http://localhost:3000/postcomment";
 export default url;
